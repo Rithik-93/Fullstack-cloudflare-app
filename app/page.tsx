@@ -1,19 +1,18 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import Image from "next/image";
+import { getMessagesFromDatabase } from "@/actions/get-message-from-database";
+import MessageForm from "@/components/message-form";
 
-export default function Home() {
+export const runtime = "edge";
+
+export default async function Home() {
+  const messages = await getMessagesFromDatabase();
   return (
-    <main className="max-w-2xl mx-auto p-5">
-      <div className="flex flex-col justify-center">
-        <Input placeholder="input box"/>
-        <Button>submit</Button>
-      </div>
-      <div>
-        <ul className="p-5">
-          <li>esfsfsf</li>
-          <li>esfsef</li>
-          <li>sefesf</li>
+    <main className="max-w-2xl mx-auto p-10">
+      <MessageForm />
+      <div className="p-5">
+        <ul>
+          {messages.map((message : any) => {
+            return <li key={message.id}>{message.message}</li>;
+          })}
         </ul>
       </div>
     </main>

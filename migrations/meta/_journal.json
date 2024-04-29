@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1714418736735,
+      "tag": "0000_luxuriant_gideon",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1714418993354,
+      "tag": "0001_neat_zaran",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1714421464148,
+      "tag": "0002_robust_landau",
+      "breakpoints": true
+    }
+  ]
+}
